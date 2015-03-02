@@ -1,0 +1,32 @@
+﻿Build started 2/15/2015 8:06:41 PM.
+     1>Project "C:\Users\electricity\Documents\Visual Studio 2010\Projects\SoftProjServerTest\SoftProjServerTest\SoftProjServerTest.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\SoftProjServerTest.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\electricity\documents\visual studio 2010\projects\softprojservertest\softprojservertest\imsg.h(164): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(867) : see declaration of 'itoa'
+     1>c:\users\electricity\documents\visual studio 2010\projects\softprojservertest\softprojservertest\imsg.h(548): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>c:\users\electricity\documents\visual studio 2010\projects\softprojservertest\softprojservertest\imsg.h(548): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>c:\users\electricity\documents\visual studio 2010\projects\softprojservertest\softprojservertest\main.cpp(77): warning C4309: 'initializing' : truncation of constant value
+     1>c:\users\electricity\documents\visual studio 2010\projects\softprojservertest\softprojservertest\imsg.h(247): warning C4700: uninitialized local variable 'portnum' used
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\electricity\Documents\Visual Studio 2010\Projects\SoftProjServerTest\Debug\SoftProjServerTest.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\SoftProjServerTest.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\electricity\Documents\Visual Studio 2010\Projects\SoftProjServerTest\Debug\SoftProjServerTest.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\electricity\Documents\Visual Studio 2010\Projects\SoftProjServerTest\Debug\SoftProjServerTest.lib" /MACHINE:X86 Debug\arrfuncs.obj
+         Debug\imsg.obj
+         Debug\imsgData.obj
+         Debug\imsgEvent.obj
+         Debug\main.obj
+         Debug\otherfuncs.obj
+         LINK : C:\Users\electricity\Documents\Visual Studio 2010\Projects\SoftProjServerTest\Debug\SoftProjServerTest.exe not found or not built by the last incremental link; performing full link
+         SoftProjServerTest.vcxproj -> C:\Users\electricity\Documents\Visual Studio 2010\Projects\SoftProjServerTest\Debug\SoftProjServerTest.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\electricity\Documents\Visual Studio 2010\Projects\SoftProjServerTest\Debug\SoftProjServerTest.exe;#1" /manifest Debug\SoftProjServerTest.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\SoftProjServerTest.unsuccessfulbuild".
+         Touching "Debug\SoftProjServerTest.lastbuildstate".
+     1>Done Building Project "C:\Users\electricity\Documents\Visual Studio 2010\Projects\SoftProjServerTest\SoftProjServerTest\SoftProjServerTest.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.74

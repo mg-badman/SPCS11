@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\imsg">
+      <UniqueIdentifier>{2355ca9e-f355-46b1-bb7e-04ff7b48e037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\imsg">
+      <UniqueIdentifier>{a43066e3-3902-45e4-8471-f10606c0ff9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\md5">
+      <UniqueIdentifier>{74e33bf0-8bc9-4b81-b97d-480873511622}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imsg.cpp">
+      <Filter>Source Files\imsg</Filter>
+    </ClCompile>
+    <ClCompile Include="imsgData.cpp">
+      <Filter>Source Files\imsg</Filter>
+    </ClCompile>
+    <ClCompile Include="imsgEvent.cpp">
+      <Filter>Source Files\imsg</Filter>
+    </ClCompile>
+    <ClCompile Include="arrfuncs.cpp">
+      <Filter>Source Files\imsg</Filter>
+    </ClCompile>
+    <ClCompile Include="otherfuncs.cpp">
+      <Filter>Source Files\imsg</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="arrfuncs.h">
+      <Filter>Header Files\imsg</Filter>
+    </ClInclude>
+    <ClInclude Include="otherfuncs.h">
+      <Filter>Header Files\imsg</Filter>
+    </ClInclude>
+    <ClInclude Include="imsg.h">
+      <Filter>Header Files\imsg</Filter>
+    </ClInclude>
+    <ClInclude Include="imsgClient.h">
+      <Filter>Header Files\imsg</Filter>
+    </ClInclude>
+    <ClInclude Include="imsgData.h">
+      <Filter>Header Files\imsg</Filter>
+    </ClInclude>
+    <ClInclude Include="imsgEvent.h">
+      <Filter>Header Files\imsg</Filter>
+    </ClInclude>
+    <ClInclude Include="md5.h">
+      <Filter>Header Files\md5</Filter>
+    </ClInclude>
+    <ClInclude Include="imsgDataDef.h">
+      <Filter>Header Files\imsg</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
