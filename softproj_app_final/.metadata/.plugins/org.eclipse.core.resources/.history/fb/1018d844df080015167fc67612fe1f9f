@@ -1,0 +1,167 @@
+package com.test.softwproj;
+import java.util.*;
+import java.io.*;
+import java.net.*;
+
+import android.os.AsyncTask;
+import android.util.Log;
+
+
+
+class cl{
+
+	Socket clSock;
+	public InputStream inStream;
+ 	public OutputStream outStream;
+
+
+	cl_readserver readServerThread;
+	cl_consolemode consoleModeThread;
+
+	MainActivity a;
+
+	public void setErrorStatus(int errstat){
+		//a.err(errstat);
+		Log.e("INTERNAL ERR:","Err: "+errstat);
+	}
+
+	
+	public cl(String ip,int port, boolean conInputEnabled, MainActivity i){
+		boolean ae=true;
+		try{
+			clSock = new Socket(ip,port);
+
+		}catch(Exception e){
+			setErrorStatus(1);
+			e.printStackTrace();
+			ae=false;
+		}
+		
+		boolean be=true;
+		try {
+			inStream = clSock.getInputStream();
+			outStream = clSock.getOutputStream();
+
+			readServerThread = new cl_readserver(this);
+			readServerThread.execute();
+
+			if(conInputEnabled){
+				consoleModeThread = new cl_consolemode(this);
+				consoleModeThread.execute();
+			}
+			
+		} catch (IOException e) {
+			setErrorStatus(21);
+			e.printStackTrace();
+			be=false;
+		}
+
+		a=i;
+		if(!(ae & be)){
+			a.messageReceived("Connected Successfully");
+		}
+	}
+
+
+	public void messageReceived(String msg){
+		System.out.println(msg);
+		a.messageReceived(msg);
+
+	}
+
+	public void write(String msg){
+		try{
+
+			outStream.write(msg.getBytes());
+			if(fp(msg).equals("!quit")){
+				this.stop();
+				System.exit(0);
+			}
+		}catch(Exception e){
+			setErrorStatus(2);
+			//e.printStackTrace();
+		}
+	}
+
+	static String fp (String s){
+		String result="";
+		for (int i=0;i<s.length();i++){
+			if (s.charAt(i)==' '){
+				return result;
+			}else{
+				result=result+s.charAt(i);
+			}
+		}
+		return result;
+	}
+
+	void stop(){
+		try{
+		if(readServerThread != null){
+			readServerThread.cancel(true);
+			readServerThread=null;
+		}
+
+		if(consoleModeThread != null){
+			consoleModeThread.cancel(true);
+			consoleModeThread=null;
+		}
+
+		if(clSock != null){
+			clSock.close();
+			clSock=null;
+		}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+}
+
+class cl_readserver extends AsyncTask {
+	cl client;
+	public cl_readserver(cl c){
+		client=c;
+	}
+
+
+
+	@Override
+	protected Object doInBackground(Object... params) {
+		while(true){
+			String out="";
+			try{
+				while(client.inStream.available()>0){
+					out = out + (char)client.inStream.read();
+				}
+			}catch(Exception e){
+				client.setErrorStatus(3);
+				//e.printStackTrace();
+			}
+			if(!out.equals("")){
+				client.messageReceived(out);
+			}
+		}
+	}
+}
+
+
+@SuppressWarnings("rawtypes")
+class cl_consolemode extends AsyncTask{
+
+	cl client;
+	public cl_consolemode(cl c){
+		client=c;
+	}
+
+	
+
+	@Override
+	protected Object doInBackground(Object... params) {
+		Scanner in = new Scanner(System.in);
+		while(true){
+			String tosend = in.nextLine();
+			client.write(tosend);
+		}
+	}
+
+}
